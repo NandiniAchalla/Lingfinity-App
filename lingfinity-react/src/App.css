@@ -9,6 +9,7 @@ html, body, #root {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #f1f5f9;
 }
 
 .container {
@@ -244,4 +245,87 @@ button:hover {
 /* Docs color */
 .read-the-docs {
   color: #888;
+}
+
+/* Main section (quote + word of the day) */
+.main-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 40px 20px;
+  background-color: #e2e8f0;
+}
+
+/* Games page: full width and centered */
+.games-page {
+  width: 95%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+  background-color: #f1f5f9;
+}
+
+/* Flex container for multiple games */
+.games-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background-color: #f1f5f9;
+}
+
+/* Individual game box */
+.games-container .game-box {
+  flex: 1 1 30%;
+  min-width: 250px;
+  background-color: #3b82f6;
+  color: #1e40af;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 500px;
+}
+
+/* Inputs */
+.games-container .game-box input {
+  width: 80%;
+  padding: 0.4rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #1e40af;
+}
+
+/* Buttons */
+.games-container .game-box button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #1e40af;
+  background-color: #1e40af;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.games-container .game-box button:hover {
+  background-color: #e2e8f0;
+  color: #1e40af;
+}
+
+/* Responsive: stack games on smaller screens */
+@media (max-width: 900px) {
+  .games-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .games-container .game-box {
+    width: 90%;
+    max-width: 500px;
+  }
 }

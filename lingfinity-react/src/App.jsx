@@ -2,6 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Games from "./components/pages/Games";
+import WordScramble from "./components/games/WordScramble";
+import WordGuess from "./components/games/WordGuess";
+import WordMatch from "./components/games/WordMatch";
 
 function App() {
   const fullText = `“ To Have Another Language Is To Possess A Second Soul.”`;
@@ -30,7 +35,7 @@ function App() {
 
     typeWriter();
     return () => clearTimeout(timeoutRef.current);
-  }, []);
+  }, [author, fullText]);
 
   return (
     <>
@@ -52,6 +57,16 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Games section */}
+<div className="games-page">
+  <div className="games-container">
+    <WordScramble />
+    <WordGuess />
+    <WordMatch />
+  </div>
+</div>
+
       <Footer />
     </>
   );
